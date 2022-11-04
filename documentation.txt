@@ -1,0 +1,26 @@
+./run.sh to run all clients at once
+
+To change the algorithm, go into server.py and Ctrl+F for "fl.server.strategy.FedAvg" and replace FedAvg with any of the provided FL algorithms
+- Provided: 
+    - FaultTolerantFedAvg
+    - FedAdagrad
+    - FedAdam 
+    - FedAvgAndroid
+    - FedAvgM (Federated Averaging with Momentum)
+    - FedOpt (Adapted Federated Optimization)
+    - FedYogi (Adaptive Federated Optimization using Yogi)
+    - QFedAvg
+ - To run FedProx, set accept_failures=True for the server strategy and add the proximal term to "optimizer" on line 56 of client.py
+
+Modifying hyperparameters:
+- Change batch size
+    - Change in client.py and utils.py
+- Change epochs
+    - Change in client.py and utils.py
+- Change learning rate (lr) and momentum 
+    - Line 55 of client.py
+- Change FL hyperparameters: fraction_fit, num_rounds, accept_failures, etc.
+    - Lines 43-47 of server.py
+- Change training/test set sizes
+    - You can do this in load_partition() in utils.py
+- Tweak NN implementation in client.py
