@@ -1,4 +1,4 @@
-# pcos-fl using PyTorch & Flower
+# fl-pcos using PyTorch & Flower
 
 ## Project Setup
 
